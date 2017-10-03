@@ -6,15 +6,15 @@ const app = express();
 const fs = require('fs');
 
 // Twilio Credentials
-var accountSid = 'ACa2c293449cb04276aa45cdd8ac130342';
-var authToken = 'ed115b94915402b317ff74151b981198';
+var accountSid = 'ACCOUNTSID_HERE';
+var authToken = 'AUTH_TOKEN_HERE';
 
 //require the Twilio module and create a REST client
 var client = require('twilio')(accountSid, authToken);
 
 client.messages.create({
-    to: "+14088217529",
-    from: "+14085603576",
+    to: "<YOUR_PHONE_NUMBER_HERE>",
+    from: "TWILIO_PHONE_NUMBER_HERE",
     body: "Hello Jeron, please indicate your vote for the 2020 presidential election",
 }, function(err, message) {
     console.log(message.sid);
